@@ -1,1 +1,8 @@
-<p>users works!</p>
+<router-outlet />
+<ul>
+  @for(user of users$ | async; track user.id) {
+  <li>
+    <a [routerLink]="[user.id]">{{ user.name }}</a>
+  </li>
+  }
+</ul>

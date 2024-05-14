@@ -13,5 +13,11 @@ export const routes: Routes = [
   {
     path: 'users',
     loadComponent: () => import('users').then((c) => c.UsersComponent),
+    children: [
+      {
+        path: ':id',
+        loadComponent: () => import('users').then((c) => c.UserDetailComponent),
+      },
+    ],
   },
 ];
